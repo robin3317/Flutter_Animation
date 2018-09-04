@@ -7,6 +7,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  Animation<double> catAnimation;
+  AnimationController catController;
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
