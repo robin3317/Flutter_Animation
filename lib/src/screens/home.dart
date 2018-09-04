@@ -13,6 +13,9 @@ class _HomeState extends State<Home> {
         title: Text("Animation"),
         centerTitle: true,
       ),
+      body: buildAnimation(),
     );
   }
+
+  Widget buildAnimation() {}
 }
