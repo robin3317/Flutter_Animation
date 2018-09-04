@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/cat.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -17,5 +18,7 @@ class _HomeState extends State<Home> {
     );
   }
 
-  Widget buildAnimation() {}
+  Widget buildAnimation() {
+    return Cat();
+  }
 }
