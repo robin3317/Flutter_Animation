@@ -14,7 +14,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     catController = AnimationController(
-      duration: Duration(seconds: 3),
+      duration: Duration(seconds: 2),
       vsync: this,
     );
     catAnimation = Tween(begin: 0.0, end: 100.0).animate(
@@ -25,7 +25,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
     );
   }
 
-  onTap() => catController.forward();
+  onTap() {
+    if (catController.status == AnimationStatus.completed) {
+      catController.reverse();
+    } else if (catController.status == AnimationStatus.dismissed) {
+      catController.forward();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
