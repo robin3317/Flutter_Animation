@@ -14,7 +14,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     catController = AnimationController(
-      duration: Duration(seconds: 2),
+      duration: Duration(seconds: 3),
       vsync: this,
     );
     catAnimation = Tween(begin: 0.0, end: 100.0).animate(
@@ -23,8 +23,9 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         curve: Curves.easeIn,
       ),
     );
-    catController.forward();
   }
+
+  onTap() => catController.forward();
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,10 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
         title: Text("Animation"),
         centerTitle: true,
       ),
-      body: buildAnimation(),
+      body: GestureDetector(
+        child: buildAnimation(),
+        onTap: onTap,
+      ),
     );
   }
 
